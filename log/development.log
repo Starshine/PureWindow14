@@ -1,0 +1,15 @@
+
+
+Processing InfoController#properties (for 127.0.0.1 at 2009-06-13 12:08:30) [GET]
+  Session ID: 5f1514dcce8ea67630680143b7b5ff49
+  Parameters: {"action"=>"properties", "controller"=>"rails/info"}
+  [4;36;1mSQL (0.000000)[0m   [0;1mSQLite3::SQLException: no such table: schema_migrations: SELECT version FROM schema_migrations[0m
+Completed in 0.11595 (8 reqs/sec) | Rendering: 0.00245 (2%) | DB: 0.00000 (0%) | 200 OK [http://localhost/rails/info/properties]
+
+
+Processing InfoController#properties (for 127.0.0.1 at 2009-06-13 12:16:53) [GET]
+  Session ID: BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo
+SGFzaHsABjoKQHVzZWR7AA==--1ab63b0dbd4910b1c228443f3945907730488613
+  Parameters: {"action"=>"properties", "controller"=>"rails/info"}
+  [4;35;1mSQL (0.000000)[0m   [0mSQLite3::SQLException: no such table: schema_migrations: SELECT version FROM schema_migrations[0m
+Completed in 0.03051 (32 reqs/sec) | Rendering: 0.00079 (2%) | DB: 0.00000 (0%) | 200 OK [http://localhost/rails/info/properties]
