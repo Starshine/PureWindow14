@@ -13,3 +13,163 @@ SGFzaHsABjoKQHVzZWR7AA==--1ab63b0dbd4910b1c228443f3945907730488613
   Parameters: {"action"=>"properties", "controller"=>"rails/info"}
   [4;35;1mSQL (0.000000)[0m   [0mSQLite3::SQLException: no such table: schema_migrations: SELECT version FROM schema_migrations[0m
 Completed in 0.03051 (32 reqs/sec) | Rendering: 0.00079 (2%) | DB: 0.00000 (0%) | 200 OK [http://localhost/rails/info/properties]
+  [4;36;1mSQL (0.000488)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.000259)[0m   [0mselect sqlite_version(*)[0m
+  [4;36;1mSQL (0.006888)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (0.004929)[0m   [0mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;36;1mSQL (0.000281)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.000216)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateTopics (20090613210938)
+  [4;36;1mSQL (0.000151)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.017939)[0m   [0mCREATE TABLE "topics" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255) DEFAULT NULL NULL, "description" text DEFAULT NULL NULL, "created_at" datetime DEFAULT NULL NULL, "updated_at" datetime DEFAULT NULL NULL) [0m
+  [4;36;1mSQL (0.006166)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20090613210938')[0m
+  [4;35;1mSQL (0.000508)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.000397)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.002470)[0m   [0mPRAGMA index_list("topics")[0m
+
+
+Processing InfoController#properties (for 127.0.0.1 at 2009-06-13 14:30:37) [GET]
+  Session ID: BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo
+SGFzaHsABjoKQHVzZWR7AA==--1ab63b0dbd4910b1c228443f3945907730488613
+  Parameters: {"action"=>"properties", "controller"=>"rails/info"}
+  [4;36;1mSQL (0.001071)[0m   [0;1mSELECT version FROM schema_migrations[0m
+Completed in 0.03840 (26 reqs/sec) | Rendering: 0.00240 (6%) | DB: 0.00107 (2%) | 200 OK [http://localhost/rails/info/properties]
+
+
+Processing TopicsController#index (for 127.0.0.1 at 2009-06-13 14:31:00) [GET]
+  Session ID: BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo
+SGFzaHsABjoKQHVzZWR7AA==--1ab63b0dbd4910b1c228443f3945907730488613
+  Parameters: {"action"=>"index", "controller"=>"topics"}
+  [4;35;1mTopic Load (0.000744)[0m   [0mSELECT * FROM "topics" [0m
+Rendering template within layouts/topics
+Rendering topics/index
+Completed in 0.01662 (60 reqs/sec) | Rendering: 0.00511 (30%) | DB: 0.00074 (4%) | 200 OK [http://localhost/topics]
+
+
+Processing TopicsController#new (for 127.0.0.1 at 2009-06-13 14:31:06) [GET]
+  Session ID: BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo
+SGFzaHsABjoKQHVzZWR7AA==--1ab63b0dbd4910b1c228443f3945907730488613
+  Parameters: {"action"=>"new", "controller"=>"topics"}
+Rendering template within layouts/topics
+Rendering topics/new
+Completed in 0.10318 (9 reqs/sec) | Rendering: 0.00862 (8%) | DB: 0.00000 (0%) | 200 OK [http://localhost/topics/new]
+
+
+Processing TopicsController#create (for 127.0.0.1 at 2009-06-13 14:31:21) [POST]
+  Session ID: BAh7BzoMY3NyZl9pZCIlYjQzY2QwZThmNThlMWVmNWFlYmQ5MzZmOWI1ODg5
+Y2IiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh
+c2h7AAY6CkB1c2VkewA=--885499ccbe0576d085a6a3517007cad7ba60379e
+  Parameters: {"commit"=>"Create", "topic"=>{"title"=>"Silver", "description"=>"Not quite gold enough yet"}, "authenticity_token"=>"574d6ac35b2d75e460c67d7eb0dc3f78cb02486b", "action"=>"create", "controller"=>"topics"}
+  [4;36;1mTopic Create (0.000745)[0m   [0;1mINSERT INTO "topics" ("created_at", "title", "updated_at", "description") VALUES('2009-06-13 21:31:21', 'Silver', '2009-06-13 21:31:21', 'Not quite gold enough yet')[0m
+Redirected to http://localhost:3000/topics/1
+Completed in 0.02638 (37 reqs/sec) | DB: 0.00075 (2%) | 302 Found [http://localhost/topics]
+
+
+Processing TopicsController#show (for 127.0.0.1 at 2009-06-13 14:31:21) [GET]
+  Session ID: BAh7ByIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo
+SGFzaHsGOgtub3RpY2UiJFRvcGljIHdhcyBzdWNjZXNzZnVsbHkgY3JlYXRl
+ZC4GOgpAdXNlZHsGOwZGOgxjc3JmX2lkIiViNDNjZDBlOGY1OGUxZWY1YWVi
+ZDkzNmY5YjU4ODljYg==--8a942177f5e68ab7b525a155fa65d67a45701f00
+  Parameters: {"action"=>"show", "id"=>"1", "controller"=>"topics"}
+  [4;35;1mTopic Load (0.000518)[0m   [0mSELECT * FROM "topics" WHERE ("topics"."id" = 1) [0m
+Rendering template within layouts/topics
+Rendering topics/show
+Completed in 0.01708 (58 reqs/sec) | Rendering: 0.00404 (23%) | DB: 0.00052 (3%) | 200 OK [http://localhost/topics/1]
+
+
+Processing TopicsController#index (for 127.0.0.1 at 2009-06-13 14:31:30) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlYjQzY2QwZThmNThlMWVmNWFlYmQ5MzZmOWI1ODg5
+Y2IiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh
+c2h7BjoLbm90aWNlIiRUb3BpYyB3YXMgc3VjY2Vzc2Z1bGx5IGNyZWF0ZWQu
+BjoKQHVzZWR7BjsHVA==--4185a16214c55608702a1d7796a0945f178f1b5d
+  Parameters: {"action"=>"index", "controller"=>"topics"}
+  [4;36;1mTopic Load (0.001009)[0m   [0;1mSELECT * FROM "topics" [0m
+Rendering template within layouts/topics
+Rendering topics/index
+Completed in 0.01630 (61 reqs/sec) | Rendering: 0.00559 (34%) | DB: 0.00101 (6%) | 200 OK [http://localhost/topics]
+
+
+Processing TopicsController#new (for 127.0.0.1 at 2009-06-13 14:31:48) [GET]
+  Session ID: BAh7ByIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo
+SGFzaHsABjoKQHVzZWR7ADoMY3NyZl9pZCIlYjQzY2QwZThmNThlMWVmNWFl
+YmQ5MzZmOWI1ODg5Y2I=--e340ec7f5b0047f4c3204033194a781f16b76d67
+  Parameters: {"action"=>"new", "controller"=>"topics"}
+Rendering template within layouts/topics
+Rendering topics/new
+Completed in 0.01671 (59 reqs/sec) | Rendering: 0.00513 (30%) | DB: 0.00000 (0%) | 200 OK [http://localhost/topics/new]
+
+
+Processing TopicsController#create (for 127.0.0.1 at 2009-06-13 14:32:13) [POST]
+  Session ID: BAh7BzoMY3NyZl9pZCIlYjQzY2QwZThmNThlMWVmNWFlYmQ5MzZmOWI1ODg5
+Y2IiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh
+c2h7AAY6CkB1c2VkewA=--885499ccbe0576d085a6a3517007cad7ba60379e
+  Parameters: {"commit"=>"Create", "topic"=>{"title"=>"Chrysalis", "description"=>"Where butterflies come from"}, "authenticity_token"=>"574d6ac35b2d75e460c67d7eb0dc3f78cb02486b", "action"=>"create", "controller"=>"topics"}
+  [4;35;1mTopic Create (0.000509)[0m   [0mINSERT INTO "topics" ("created_at", "title", "updated_at", "description") VALUES('2009-06-13 21:32:13', 'Chrysalis', '2009-06-13 21:32:13', 'Where butterflies come from')[0m
+Redirected to http://localhost:3000/topics/2
+Completed in 0.02557 (39 reqs/sec) | DB: 0.00051 (1%) | 302 Found [http://localhost/topics]
+
+
+Processing TopicsController#show (for 127.0.0.1 at 2009-06-13 14:32:13) [GET]
+  Session ID: BAh7ByIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo
+SGFzaHsGOgtub3RpY2UiJFRvcGljIHdhcyBzdWNjZXNzZnVsbHkgY3JlYXRl
+ZC4GOgpAdXNlZHsGOwZGOgxjc3JmX2lkIiViNDNjZDBlOGY1OGUxZWY1YWVi
+ZDkzNmY5YjU4ODljYg==--8a942177f5e68ab7b525a155fa65d67a45701f00
+  Parameters: {"action"=>"show", "id"=>"2", "controller"=>"topics"}
+  [4;36;1mTopic Load (0.000427)[0m   [0;1mSELECT * FROM "topics" WHERE ("topics"."id" = 2) [0m
+Rendering template within layouts/topics
+Rendering topics/show
+Completed in 0.01566 (63 reqs/sec) | Rendering: 0.00307 (19%) | DB: 0.00043 (2%) | 200 OK [http://localhost/topics/2]
+
+
+Processing TopicsController#index (for 127.0.0.1 at 2009-06-13 14:32:16) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlYjQzY2QwZThmNThlMWVmNWFlYmQ5MzZmOWI1ODg5
+Y2IiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh
+c2h7BjoLbm90aWNlIiRUb3BpYyB3YXMgc3VjY2Vzc2Z1bGx5IGNyZWF0ZWQu
+BjoKQHVzZWR7BjsHVA==--4185a16214c55608702a1d7796a0945f178f1b5d
+  Parameters: {"action"=>"index", "controller"=>"topics"}
+  [4;35;1mTopic Load (0.001001)[0m   [0mSELECT * FROM "topics" [0m
+Rendering template within layouts/topics
+Rendering topics/index
+Completed in 0.01710 (58 reqs/sec) | Rendering: 0.00584 (34%) | DB: 0.00100 (5%) | 200 OK [http://localhost/topics]
+
+
+Processing TopicsController#index (for 127.0.0.1 at 2009-06-13 15:04:37) [GET]
+  Session ID: BAh7ByIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo
+SGFzaHsABjoKQHVzZWR7ADoMY3NyZl9pZCIlYjQzY2QwZThmNThlMWVmNWFl
+YmQ5MzZmOWI1ODg5Y2I=--e340ec7f5b0047f4c3204033194a781f16b76d67
+  Parameters: {"action"=>"index", "controller"=>"topics"}
+  [4;36;1mTopic Load (0.001120)[0m   [0;1mSELECT * FROM "topics" [0m
+Rendering template within layouts/topics
+Rendering topics/index
+Completed in 0.01717 (58 reqs/sec) | Rendering: 0.00600 (34%) | DB: 0.00112 (6%) | 200 OK [http://localhost/topics]
+
+
+Processing TopicsController#index (for 127.0.0.1 at 2009-06-13 15:04:39) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlYjQzY2QwZThmNThlMWVmNWFlYmQ5MzZmOWI1ODg5
+Y2IiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh
+c2h7AAY6CkB1c2VkewA=--885499ccbe0576d085a6a3517007cad7ba60379e
+  Parameters: {"action"=>"index", "controller"=>"topics"}
+  [4;35;1mTopic Load (0.001003)[0m   [0mSELECT * FROM "topics" [0m
+Rendering template within layouts/topics
+Rendering topics/index
+Completed in 0.01675 (59 reqs/sec) | Rendering: 0.00588 (35%) | DB: 0.00100 (5%) | 200 OK [http://localhost/topics]
+
+
+Processing TopicsController#index (for 127.0.0.1 at 2009-06-13 15:07:09) [GET]
+  Session ID: BAh7ByIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo
+SGFzaHsABjoKQHVzZWR7ADoMY3NyZl9pZCIlYjQzY2QwZThmNThlMWVmNWFl
+YmQ5MzZmOWI1ODg5Y2I=--e340ec7f5b0047f4c3204033194a781f16b76d67
+  Parameters: {"action"=>"index", "controller"=>"topics"}
+  [4;36;1mTopic Load (0.000995)[0m   [0;1mSELECT * FROM "topics" [0m
+Rendering template within layouts/topics
+Rendering topics/index
+Completed in 0.01661 (60 reqs/sec) | Rendering: 0.00598 (36%) | DB: 0.00099 (5%) | 200 OK [http://localhost/topics]
